@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Добавить клиента</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Добавить нового клиента</h1>
+    <form method="POST">
+        <label for="first_name">Имя:</label>
+        <input type="text" id="first_name" name="first_name" required>
+        
+        <label for="last_name">Фамилия:</label>
+        <input type="text" id="last_name" name="last_name" required>
+        
+        <label for="patronymic">Отчество:</label>
+        <input type="text" id="patronymic" name="patronymic">
+        
+        <label for="passport_data">Паспортные данные:</label>
+        <input type="text" id="passport_data" name="passport_data" pattern="\d{4}-\d{6}" title="Введите паспортные данные в формате XXXX-XXXX" required>
+        
+        <label for="phone_number">Номер телефона:</label>
+        <input type="tel" id="phone_number" name="phone_number" pattern="\+7\d{10}" title="Введите номер телефона в формате +7XXXXXXXXXX" required>
+        
+        <label for="birth_date">Дата рождения:</label>
+        <input type="date" id="birth_date" name="birth_date" required>
+        
+        <label for="check_in_date">Дата заселения:</label>
+        <input type="date" id="check_in_date" name="check_in_date" required>
+        
+        <label for="check_out_date">Дата выезда:</label>
+        <input type="date" id="check_out_date" name="check_out_date" required>
+        
+        <button type="submit">Добавить клиента</button>
+    </form>
+    <a href="{{ url_for('index') }}">Назад</a>
+</body>
+</html>
